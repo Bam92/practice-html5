@@ -1,0 +1,51 @@
+<style>
+    input:valid + .invalid { /* Adjacent sibling selector */
+        visibility: hidden;
+    }
+
+    input:invalid + .invalid {
+        visibility: visible;
+    }
+
+    input:required {
+        border-bottom: 2px solid #c33;
+    }
+
+    input:valid {
+        border-bottom: transparent;
+    }
+
+    .invalid {
+        color: #999;
+    }
+</style>
+
+<form>
+
+    <input type="text"
+      id="username"
+      name="username"
+      pattern="[a-zA-Z ]{5,}"
+      placeholder="username"
+      maxlength="30"
+      required
+    >
+
+    <div class="invalid">
+        The required user name may only be a serie of alphabetical charactors
+    </div>
+
+    <input type="email"
+      id="email"
+      name="email"
+      placeholder="email"
+      required
+    >
+
+    <div class="invalid">
+        The required email address may not include special charactors other than "." or "@"
+    </div>
+
+    <input type="submit" value="Login">
+    
+</form>
